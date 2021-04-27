@@ -22,6 +22,8 @@
 		F1CB466C2638468F003B5128 /* CarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB466B2638468F003B5128 /* CarDetail.swift */; };
 		F1CB466F263868FA003B5128 /* CarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB466D263868FA003B5128 /* CarListCell.swift */; };
 		F1CB4670263868FA003B5128 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CB466E263868FA003B5128 /* CarListCell.xib */; };
+		F1CB4673263888A9003B5128 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB4671263888A9003B5128 /* MainViewCell.swift */; };
+		F1CB4674263888A9003B5128 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CB4672263888A9003B5128 /* MainViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		F1CB466B2638468F003B5128 /* CarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetail.swift; sourceTree = "<group>"; };
 		F1CB466D263868FA003B5128 /* CarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCell.swift; sourceTree = "<group>"; };
 		F1CB466E263868FA003B5128 /* CarListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListCell.xib; sourceTree = "<group>"; };
+		F1CB4671263888A9003B5128 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
+		F1CB4672263888A9003B5128 /* MainViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				F189789426351ABD0016A6B4 /* CarListViewController.swift */,
 				F1CB466D263868FA003B5128 /* CarListCell.swift */,
 				F1CB466E263868FA003B5128 /* CarListCell.xib */,
+				F1CB4671263888A9003B5128 /* MainViewCell.swift */,
+				F1CB4672263888A9003B5128 /* MainViewCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1CB46642637DEF5003B5128 /* StarRatingStackView.xib in Resources */,
+				F1CB4674263888A9003B5128 /* MainViewCell.xib in Resources */,
 				F189789D26351AC00016A6B4 /* LaunchScreen.storyboard in Resources */,
 				F189789A26351AC00016A6B4 /* Assets.xcassets in Resources */,
 				F189789826351ABD0016A6B4 /* CarListViewController.storyboard in Resources */,
@@ -327,6 +334,7 @@
 				F1CB46622637DEEE003B5128 /* StarRatingStackView.swift in Sources */,
 				F189789326351ABD0016A6B4 /* SceneDelegate.swift in Sources */,
 				F1CB46662637DEFB003B5128 /* StarRatingView.swift in Sources */,
+				F1CB4673263888A9003B5128 /* MainViewCell.swift in Sources */,
 				F1CB466F263868FA003B5128 /* CarListCell.swift in Sources */,
 				F1CB466C2638468F003B5128 /* CarDetail.swift in Sources */,
 			);
@@ -504,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9B3VAYTCUD;
 				INFOPLIST_FILE = "$(SRCROOT)/mobiLive_Test/Resources/Info.plist";
@@ -513,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "bhavin.mobiLive-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -523,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9B3VAYTCUD;
 				INFOPLIST_FILE = "$(SRCROOT)/mobiLive_Test/Resources/Info.plist";
@@ -532,6 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "bhavin.mobiLive-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

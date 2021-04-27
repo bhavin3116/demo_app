@@ -14,11 +14,11 @@ class CarListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "GUIDOMIA"
     tableView.delegate = self
     tableView.dataSource = self
-    let nib = UINib(nibName: "CarListCell", bundle: nil)
-    tableView.register(nib, forCellReuseIdentifier: "CarListCell")
+    tableView.register(UINib(nibName: "CarListCell", bundle: nil), forCellReuseIdentifier: "CarListCell")
+    tableView.register(UINib(nibName: "MainViewCell", bundle: nil), forCellReuseIdentifier: "MainViewCell")
+    setTitle()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +29,7 @@ class CarListViewController: UIViewController {
   
   func setupInitialView() {
     //Custom navigation bar
-    navigationController?.navigationBar.prefersLargeTitles = true
+    //navigationController?.navigationBar.prefersLargeTitles = true
     let appearance = UINavigationBarAppearance()
     appearance.backgroundColor = UIColor.init(red: 252.0/255.0, green: 96.0/255.0, blue: 22.0/255.0, alpha: 1.0)
     appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -46,6 +46,16 @@ class CarListViewController: UIViewController {
     btnRightMenu.setImage(imageBurger, for: UIControl.State())
     let rightButton = UIBarButtonItem(customView: btnRightMenu)
     self.navigationItem.rightBarButtonItem = rightButton
+  }
+  
+  func setTitle() {
+    let TitleLabel = UILabel()
+    TitleLabel.text = "GUIDOMIA"
+    TitleLabel.textColor = .white
+    TitleLabel.font = UIFont(descriptor: UIFontDescriptor(name: "Futura-Bold", size: 25), size: 25)
+    TitleLabel.sizeToFit()
+    let leftItem = UIBarButtonItem(customView: TitleLabel)
+    self.navigationItem.leftBarButtonItem = leftItem
   }
   
   func prepareDataSource() {
@@ -65,25 +75,32 @@ class CarListViewController: UIViewController {
 }
 
 // MARK: - Table View
-
 extension CarListViewController: UITableViewDelegate,UITableViewDataSource {
 
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return carDetail?.count ?? 0
+    return carDetail!.count + 1
   }
- 
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if indexPath.row == 0 {
+      return 260
+    }
     return 150
   }
   
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "CarListCell", for: indexPath) as! CarListCell
-    let temp = carDetail![indexPath.row]
-    cell.assetName?.text = temp.model
-    cell.assetImage.image = UIImage(named: temp.model)
-    cell.assetRatings.rating = Float(temp.rating!)
-    cell.assetPrice.text = temp.customerPrice?.kmFormatted
-    return cell
+    if indexPath.row == 0 {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewCell", for: indexPath) as! MainViewCell
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "CarListCell", for: indexPath) as! CarListCell
+      let temp = carDetail![indexPath.row - 1]
+      cell.assetName?.text = temp.model
+      cell.assetImage.image = UIImage(named: temp.model)
+      cell.assetRatings.rating = Float(temp.rating!)
+      cell.assetPrice.text = temp.customerPrice?.kmFormatted
+      return cell
+    }
    }
 }
 
