@@ -16,6 +16,12 @@
 		F18978A826351AC00016A6B4 /* mobiLive_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18978A726351AC00016A6B4 /* mobiLive_TestTests.swift */; };
 		F18978B326351AC00016A6B4 /* mobiLive_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18978B226351AC00016A6B4 /* mobiLive_TestUITests.swift */; };
 		F1CB465B2637B932003B5128 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = F1CB465A2637B932003B5128 /* car_list.json */; };
+		F1CB46622637DEEE003B5128 /* StarRatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB46612637DEEE003B5128 /* StarRatingStackView.swift */; };
+		F1CB46642637DEF5003B5128 /* StarRatingStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CB46632637DEF5003B5128 /* StarRatingStackView.xib */; };
+		F1CB46662637DEFB003B5128 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB46652637DEFB003B5128 /* StarRatingView.swift */; };
+		F1CB466C2638468F003B5128 /* CarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB466B2638468F003B5128 /* CarDetail.swift */; };
+		F1CB466F263868FA003B5128 /* CarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB466D263868FA003B5128 /* CarListCell.swift */; };
+		F1CB4670263868FA003B5128 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CB466E263868FA003B5128 /* CarListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		F18978B226351AC00016A6B4 /* mobiLive_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiLive_TestUITests.swift; sourceTree = "<group>"; };
 		F18978B426351AC00016A6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1CB465A2637B932003B5128 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
+		F1CB46612637DEEE003B5128 /* StarRatingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingStackView.swift; sourceTree = "<group>"; };
+		F1CB46632637DEF5003B5128 /* StarRatingStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarRatingStackView.xib; sourceTree = "<group>"; };
+		F1CB46652637DEFB003B5128 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		F1CB466B2638468F003B5128 /* CarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetail.swift; sourceTree = "<group>"; };
+		F1CB466D263868FA003B5128 /* CarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCell.swift; sourceTree = "<group>"; };
+		F1CB466E263868FA003B5128 /* CarListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,8 @@
 			children = (
 				F189789626351ABD0016A6B4 /* CarListViewController.storyboard */,
 				F189789426351ABD0016A6B4 /* CarListViewController.swift */,
+				F1CB466D263868FA003B5128 /* CarListCell.swift */,
+				F1CB466E263868FA003B5128 /* CarListCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -99,10 +113,10 @@
 		F157A7A62637AC0E00BAAC64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F1CB46602637DECC003B5128 /* ThirdParty */,
 				F189789B26351AC00016A6B4 /* LaunchScreen.storyboard */,
 				F189789926351AC00016A6B4 /* Assets.xcassets */,
 				F189789E26351AC00016A6B4 /* Info.plist */,
-				F1CB465A2637B932003B5128 /* car_list.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -110,6 +124,8 @@
 		F157A7A72637AC7200BAAC64 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F1CB465A2637B932003B5128 /* car_list.json */,
+				F1CB466B2638468F003B5128 /* CarDetail.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -161,6 +177,16 @@
 				F18978B426351AC00016A6B4 /* Info.plist */,
 			);
 			path = mobiLive_TestUITests;
+			sourceTree = "<group>";
+		};
+		F1CB46602637DECC003B5128 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F1CB46612637DEEE003B5128 /* StarRatingStackView.swift */,
+				F1CB46632637DEF5003B5128 /* StarRatingStackView.xib */,
+				F1CB46652637DEFB003B5128 /* StarRatingView.swift */,
+			);
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +292,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CB46642637DEF5003B5128 /* StarRatingStackView.xib in Resources */,
 				F189789D26351AC00016A6B4 /* LaunchScreen.storyboard in Resources */,
 				F189789A26351AC00016A6B4 /* Assets.xcassets in Resources */,
 				F189789826351ABD0016A6B4 /* CarListViewController.storyboard in Resources */,
+				F1CB4670263868FA003B5128 /* CarListCell.xib in Resources */,
 				F1CB465B2637B932003B5128 /* car_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +324,11 @@
 			files = (
 				F189789526351ABD0016A6B4 /* CarListViewController.swift in Sources */,
 				F189789126351ABD0016A6B4 /* AppDelegate.swift in Sources */,
+				F1CB46622637DEEE003B5128 /* StarRatingStackView.swift in Sources */,
 				F189789326351ABD0016A6B4 /* SceneDelegate.swift in Sources */,
+				F1CB46662637DEFB003B5128 /* StarRatingView.swift in Sources */,
+				F1CB466F263868FA003B5128 /* CarListCell.swift in Sources */,
+				F1CB466C2638468F003B5128 /* CarDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
