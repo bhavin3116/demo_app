@@ -24,6 +24,8 @@
 		F1CB4670263868FA003B5128 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CB466E263868FA003B5128 /* CarListCell.xib */; };
 		F1CB4673263888A9003B5128 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB4671263888A9003B5128 /* MainViewCell.swift */; };
 		F1CB4674263888A9003B5128 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CB4672263888A9003B5128 /* MainViewCell.xib */; };
+		F1EFFF3C26399C0000116375 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFFF3A26399C0000116375 /* FilterCell.swift */; };
+		F1EFFF3D26399C0000116375 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EFFF3B26399C0000116375 /* FilterCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		F1CB466E263868FA003B5128 /* CarListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListCell.xib; sourceTree = "<group>"; };
 		F1CB4671263888A9003B5128 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		F1CB4672263888A9003B5128 /* MainViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
+		F1EFFF3A26399C0000116375 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		F1EFFF3B26399C0000116375 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				F1CB466E263868FA003B5128 /* CarListCell.xib */,
 				F1CB4671263888A9003B5128 /* MainViewCell.swift */,
 				F1CB4672263888A9003B5128 /* MainViewCell.xib */,
+				F1EFFF3A26399C0000116375 /* FilterCell.swift */,
+				F1EFFF3B26399C0000116375 /* FilterCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				F189789D26351AC00016A6B4 /* LaunchScreen.storyboard in Resources */,
 				F189789A26351AC00016A6B4 /* Assets.xcassets in Resources */,
 				F189789826351ABD0016A6B4 /* CarListViewController.storyboard in Resources */,
+				F1EFFF3D26399C0000116375 /* FilterCell.xib in Resources */,
 				F1CB4670263868FA003B5128 /* CarListCell.xib in Resources */,
 				F1CB465B2637B932003B5128 /* car_list.json in Resources */,
 			);
@@ -336,6 +343,7 @@
 				F1CB46662637DEFB003B5128 /* StarRatingView.swift in Sources */,
 				F1CB4673263888A9003B5128 /* MainViewCell.swift in Sources */,
 				F1CB466F263868FA003B5128 /* CarListCell.swift in Sources */,
+				F1EFFF3C26399C0000116375 /* FilterCell.swift in Sources */,
 				F1CB466C2638468F003B5128 /* CarDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
