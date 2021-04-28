@@ -13,6 +13,8 @@ class CarListCell: UITableViewCell {
   @IBOutlet weak var assetName: UILabel!
   @IBOutlet weak var assetPrice: UILabel!
   @IBOutlet weak var assetRatings: StarRatingView!
+  @IBOutlet weak var prosStackView: UIStackView!
+  @IBOutlet weak var consStackView: UIStackView!
   
     override func awakeFromNib() {
         super.awakeFromNib()

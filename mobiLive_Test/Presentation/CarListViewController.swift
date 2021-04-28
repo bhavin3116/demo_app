@@ -9,8 +9,16 @@ import UIKit
 
 class CarListViewController: UIViewController {
 
+  struct customCellData {
+    var expanded = Bool()
+    var carObject : CarDetail
+  }
+  
+  
   @IBOutlet weak var tableView: UITableView!
   var carDetail: [CarDetail]?
+  var listTableData = [customCellData]()
+  var firstIndex = true
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -59,7 +67,8 @@ class CarListViewController: UIViewController {
   }
   
   func prepareDataSource() {
-    // MARK: - Json fetch
+    
+    // MARK: - Json fetch on main show spinner
     if let path = Bundle.main.path(forResource: "car_list", ofType: "json") {
         do {
               let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -70,38 +79,95 @@ class CarListViewController: UIViewController {
             // handle error
             print(error.localizedDescription)
           }
-      }
+       if let data = self.carDetail {
+        for carObj in data {
+          if firstIndex {
+            listTableData.append(customCellData(expanded: true, carObject: carObj))
+            firstIndex = false
+          } else {
+            listTableData.append(customCellData(expanded: false, carObject: carObj))
+           }
+          }
+        }
+    }
   }
 }
 
 // MARK: - Table View
 extension CarListViewController: UITableViewDelegate,UITableViewDataSource {
 
+   func numberOfSections(in tableView: UITableView) -> Int {
+     return carDetail!.count + 1
+   }
+  
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return carDetail!.count + 1
-  }
+     return 1
+   }
 
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    if indexPath.row == 0 {
-      return 260
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if indexPath.section == 0 {
+       return 260
     }
-    return 150
-  }
+    else {
+      if listTableData[indexPath.section - 1].expanded == true {
+         return UITableView.automaticDimension
+      } else {
+         return 150
+      }
+    }
+   }
   
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row == 0 {
+    if indexPath.section == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewCell", for: indexPath) as! MainViewCell
       return cell
-    } else {
+     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "CarListCell", for: indexPath) as! CarListCell
-      let temp = carDetail![indexPath.row - 1]
+      let temp = carDetail![indexPath.section - 1]
       cell.assetName?.text = temp.model
       cell.assetImage.image = UIImage(named: temp.model)
       cell.assetRatings.rating = Float(temp.rating!)
       cell.assetPrice.text = temp.customerPrice?.kmFormatted
+      //Clean up stackview to avoid duplications
+      for case let label as UILabel in cell.consStackView.subviews {
+        label.removeFromSuperview()
+      }
+      for case let label as UILabel in cell.prosStackView.subviews {
+        label.removeFromSuperview()
+      }
+      if temp.consList.count>0 {
+        for str in temp.consList {
+          let label = UILabel(frame: CGRect(x: 0 , y: 200,width: 300, height: 21))
+          label.text =  "•" + " " + str
+          cell.consStackView.addArrangedSubview(label)
+        }
+      }
+      if temp.prosList.count>0 {
+        for str in temp.prosList {
+          let label = UILabel(frame: CGRect(x: 0 , y: 200,width: 300, height: 21))
+          label.text = "•" + " " + str
+          cell.prosStackView.addArrangedSubview(label)
+        }
+      }
       return cell
     }
    }
+  
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  
+    if indexPath.section != 0 {
+      if listTableData[indexPath.section - 1].expanded == true {
+         listTableData[indexPath.section - 1].expanded = false
+         let sections = IndexSet.init(integer: indexPath.section)
+         tableView.reloadSections(sections, with: .automatic)
+      } else {
+        listTableData[indexPath.section - 1].expanded = true
+        let sections = IndexSet.init(integer: indexPath.section)
+        tableView.reloadSections(sections, with: .automatic)
+      }
+    }
+    
+  }
 }
 
 extension Double {
